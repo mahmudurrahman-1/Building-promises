@@ -22,7 +22,7 @@ const writeFilePro = (file, data) => {
   });
 };
 
-readFilepro(`${__dirname}/dog.txt`)
+readFilepro(`${__dirname}/txt/dog.txt`)
   .then((data) => {
     return superagent.get(
       `https://dog.ceo/api/breed/${data}/images
@@ -30,7 +30,7 @@ readFilepro(`${__dirname}/dog.txt`)
     );
   })
   .then((data) => {
-    writeFilePro(`sdi.txt`, `${data.body.message}`);
+    writeFilePro(`txt/sdi.txt`, `${data.body.message}`);
   })
   .then(() => {
     console.log("The file is saved successfully");
